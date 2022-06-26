@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        BÀI TẬP THỰC HÀNH JAVA SCRIPT
+    </h1>
+    <pre>1. Nhập vào tên sinh viên và tuổi sinh viên. In ra năm sinh của sinh viên đó</pre>
+</body>
+<script>
+    let name = prompt("nhập tên của bạn!")
+    let age = prompt("nhập tuổi vào đây!");
+    let d = new Date();
+    let year = d.getFullYear()
+    let namsinh = year-age;
+    alert("tên của bạn là :"+ name);
+    alert("năm sinh của bạn là :" + namsinh);
+</script>
+</html>

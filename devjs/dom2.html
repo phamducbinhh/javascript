@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <h1>ẩn hiện password</h1>
+    <input type="password">
+    <button class="button">1</button> -->
+
+    <hr>
+    <pre>hiện nội dung trong input</pre>
+    <input type="text">
+    <button class="button">1</button>
+</body>
+<script>
+    const button = document.querySelectorAll('button')[0]
+    const input = document.querySelectorAll('input')[0]
+    const body = document.querySelector('body')
+
+    function check(){
+        let value = input.value
+        console.log(typeof value);
+        const p = document.createElement('p')
+        p.innerHTML = value;
+        body.append(p)
+        
+    }
+
+    button.addEventListener('click',check)
+    //ẩn hiện password
+    // const button = document.querySelectorAll('button')[0]
+    // const input = document.querySelector('input')
+
+    // function show() {
+    //     button.removeEventListener('click',show)
+    //     input.setAttribute('type', 'text')
+    //     button.addEventListener('click',hide)
+    // }
+    // function hide() {
+    //     button.removeEventListener('click',hide)
+    //     input.setAttribute('type', 'password')
+    //     button.addEventListener('click',show)
+    // }
+
+    //cách 2
+
+    // button.addEventListener('click',function(){
+    //     let type = input.getAttribute('type')
+    //     console.log(type);
+    //     if(type==='password'){
+    //         input.setAttribute('type','text')
+    //     }else{
+    //         input.setAttribute('type','password')
+    //     }
+    // })
+</script>
+
+</html>

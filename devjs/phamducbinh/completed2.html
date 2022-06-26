@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        BÀI TẬP THỰC HÀNH JAVA SCRIPT
+    </h1>
+    <pre>2. Nhập vào 1 năm, kiểm tra năm đó có phải là năm nhuận hay không</pre>
+</body>
+<script>
+        function year(nam){
+            if((nam % 400 == 0) && (nam % 100 != 0) || (nam % 4 == 0)){
+                return 'là năm nhuận'
+            }else{
+                return 'không phải năm nhuận'
+            }
+        }
+        alert(year(2021));
+</script>
+</html>

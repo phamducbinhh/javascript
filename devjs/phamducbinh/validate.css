@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* div{
+      border: 1px solid;
+  } */
+form {
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 1.5rem;
+  background-color: rgba(20, 20, 20, 0.8);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form h2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin: 5px 0px 4px 0;
+}
+.row span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-family: sans-serif;
+  font-style: italic;
+  text-align: -webkit-right;
+  margin-top: 2px;
+}
+.row span img {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+}
+.row input {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 10px 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #26a69a;
+  color: #fff;
+}
+.row input:focus {
+  border-bottom: 1px solid red;
+}
+::placeholder {
+  color: #ccc;
+  font-size: 12px;
+}
+.row .gioi_tinh {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid #26a69a;
+}
+.row .gioi_tinh input {
+  width: 5%;
+  margin-right: 4px;
+  cursor: pointer;
+}
+label {
+  font-size: 12px;
+}
+#btn_register {
+  color: #fff;
+  background-color: #00bfa6;
+  border: 2px solid #00bfa6;
+  outline: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+#btn_register:hover {
+  background-image: linear-gradient(#02aab0, #00cdac);
+  transition: 1s;
+}

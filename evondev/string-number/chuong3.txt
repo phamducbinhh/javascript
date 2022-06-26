@@ -1,0 +1,79 @@
+#chương 2 : nắm vững các kiến thức string
+
+-tìm hiểu về kiểu dữ liệu string
+-ví dụ về string
+-sử dụng biến trong string
+
+*các hàm hay dùng vơi string
+-index   => là vị trí của giá trị trong biến tính từ 0
+
+-lenght  => độ dài của phần tử trong mảng
+
+-split   => Phương thức split() của String chia một chuỗi thành một mảng các chuỗi con:
+
+-tolowerCase  => viết chữ thường
+
+-toUpperCase  => viết in hoa
+
+-string.startsWith() => có phân biệt chữ hoa chữ thường.Phương thức sẽ trả về True nếu chuỗi được bắt đầu bằng chuỗi con được cung cấp, ngược lại phương thức sẽ trả về False.
+
+-includes => Phương thức string.includes() sẽ kiểm tra xem một chuỗi con được người dúng cung cấp có nằm trong chuỗi hay không.
+
+-indexof => xem vị trí phần tử
+
+-replace => thay thế 1 phần tử 
+
+-reapet => lặp lại
+
+-slice => string.slice(start, end) cắt một chuỗi ký tự
+
+-substr
+
+-trim => loại bỏ khoảng trống 2 bên 
+
+-charArt => Phương thức string.charAt() có chức năng tìm kiếm kí tự ở một vị trí nào đó trong chuỗi, vị trí tìm kiếm đó sẽ do người dùng xác định.
+
+-substr => lấy ra 1 phần của chuỗi (string)
+
+-substring  => lấy ra các ký tự của chuỗi (string)
+
+
+*các hàm hay dùng của Number
+
+-parseInt => in ra kiểu dữ liệu số nguyên
+
+-parseFloat =>  ỉn ra kiểu số thập phân
+
+-Math => giá trị tuyệt đối 
+
+-Math.floor(value) => làm tròn số ví dụ từ 3.4 xuống 3
+
+-Math.cell(value) => làm tròn lên từ 4.5 lên 5
+
+-Math.round(value) => làm tròn gần nhất ví dụ 4.8 -> 5 hoặc dưới 4.5 là còn 4
+
+- toFixed(number) ví dụ 0.33333 -> 0.3
+
+-Math .max lấy ra số lơn nhất
+
+-Math .min lấy ra số nhỏ nhất
+
+-isNaN(value) vs number.isNaN(value)
+//NaN -> not a number
+
+
+****các kiểu dữ liệu khác trong javascript
+
+-undefined => khai báo nhưng chưa gán giá trị
+
+-Null -> nothing không có 1 giá trị nào
+
+-boolean -> kết quẩ trả về true và false
+
+//falsy values vs truthy values
+
+//falsy values : " ",0,false, undefined
+
+//truthy values:"abc",1,true,100..
+
+=====================================================

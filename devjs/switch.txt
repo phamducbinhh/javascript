@@ -1,0 +1,11 @@
+switch(expression){
+    case value;
+        statement 1;
+        break;
+    case value 2;
+        statement2;
+        break;
+    ...
+    [defaul:]
+        statement n+1;
+}

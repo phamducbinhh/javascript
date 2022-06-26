@@ -1,0 +1,38 @@
+khai biến var,let,const
+
+-var tenBien = giá trị                  // khai báo biến
+
+-console.log(); =>> in ra nội dung       //hiện nội dung trên 
+console
+
+
+-typeof(giá trị)                          //trả vè kiểu biến
+
+
+-array [1,2,3,4'abc']
+
+
+-phần tử trong array được đánh thứ tự từ 0
+
+ *tenArray.length                     //độ dài trong array,và cả string
+ *tenArray.length-1                   //vị trí phần tử cuối
+array[tenArray.length-1]
+
+-object{
+    key1:value1,
+    key2:value2,
+    }
+
+*dấu =       // gán giá trị,ghi đè giá trị
+    ==      // so sánh về giá trị
+    ===     // so sánh về giá trị,cả kiểu biến
+
+
+%         // lấy số dư
+&&          // true nếu tất cả đúng,false nếu có 1 cái sai
+||          // false nếu tất cả sai.true nếu có 1 cái đúng
+
+
+if(){code đúng}
+esle {code sai}
+============================================================================================================================

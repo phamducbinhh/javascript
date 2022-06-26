@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>Open Modal</title>
+</head>
+<style>
+    .button {
+        display: block;
+        width: 150px;
+        border: 0;
+        background-color: #07a787;
+        color: white;
+        padding: 15px;
+        margin: 100px auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 9999px;
+    }
+
+    .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: zoom-out;
+
+    }
+
+    .modal-content {
+        background-color: white;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        position: relative;
+        z-index: 10;
+        padding: 30px;
+        height: 200px;
+        cursor: auto;
+    }
+
+    .modal-close {
+        position: absolute;
+        right: 23px;
+        top: 24px;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 100rem;
+        color: white;
+        background-color: #07a787;
+        padding: 5px;
+        transform: translate(50%, -50%);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+
+<body>
+    <button class="button">submit</button>
+    <div class="modal hide">
+        <div class="modal-content">
+            <i class="fa fa-times modal-close"></i>
+            <div class="modal-main">
+            </div>
+        </div>
+    </div>`
+</body>
+<script>
+    const button = document.querySelector(".button");
+    const closeBtn = document.querySelector(".modal-close");
+    const modal = document.querySelector(".modal");
+    //cách 2
+    function handleClick() {
+        modal.classList.toggle("hide")
+    }
+    button.addEventListener("click", handleClick);
+    closeBtn.addEventListener("click", handleClick);
+    modal.addEventListener("click",function(e){
+       if(e.target == e.currentTarget){
+        handleClick();
+       }
+    })
+    // const template = `   <div class="modal">
+    //   <div class="modal-content">
+    //     <i class="fa fa-times modal-close"></i>
+    //     <div class="modal-main">
+    //     </div>
+    //   </div>
+    // </div>`
+    //cách 1
+    // button.addEventListener("click", function () {
+    //     document.body.insertAdjacentHTML("beforeend", template)
+    // });
+    // // closeBtn.addEventListener("click",function(e){
+    // //     console.log(e.target);
+    // // })
+    // document.body.addEventListener("click", function (e) {
+    //     console.log(e.target);
+    //     if (e.target.matches(".modal-close")) {
+    //         const modal = e.target.parentNode.parentNode;
+    //         modal.parentNode.removeChild(modal);
+    //         //matches kiểm tra phần tử click vào có phải modal hay ko
+    //     } else if (e.target.matches(".modal")) {
+    //         //nếu không thì =>
+    //         e.target.parentNode.removeChild(e.target);
+    //     }
+    // })
+
+
+</script>
+
+</html>

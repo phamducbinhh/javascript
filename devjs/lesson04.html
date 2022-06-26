@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>các hàm xử lý trong các kiểu dữ liệu</title>
+</head>
+<body>
+    <script>
+        // Đối tượng number
+        var a = '67';
+        var c = parseInt(a)+10;
+        var d = 60;
+        // Chuyển kiểu number sang kiểu chuỗi
+        var e = d.toString(); 
+        console.log(typeof(e));
+        console.log(a.valueOf());
+
+        // Date trong Javascript
+        //cách 1
+        var currentDate=new Date();
+        console.log(currentDate);
+        //cách 2
+        var date2= new Date(5000);
+        console.log(date2);
+        //cách 3
+        var str ='2022-04-15';
+        var date3 = new Date(str)
+        console.log(date3);
+        //cách 4
+        var year= 2022;
+        var month = 03;
+        var day =15;
+        var date4 = new Date(year,month,day)
+        console.log(date4);
+        //các hàm làm việc đối tượng date
+        console.log('ngày trong tháng:'+ currentDate.getDate());
+        console.log('ngày trong tuần'+ currentDate.getDay());
+        console.log('năm đầy đủ:'+ currentDate.getFullYear());
+        console.log('năm 2 chữ số cuối:'+ currentDate.getYear());
+        console.log('giờ trong ngày:'+ currentDate.getHours());
+        console.log('quy đổi sang milisecond:'+ currentDate.getTime());
+
+        //thiết lập date
+        currentDate.setDate(20);
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

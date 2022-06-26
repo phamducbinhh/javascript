@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #image{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+    }
+</style>
+<body>
+
+<!-- 11.Xây dựng chương trình gồm 1 thẻ img và 2 button. Khi click vào button 1
+thì đổi ảnh của img sang ảnh mới, khi click vào button 2 thì đổi ảnh mới
+thành ảnh cũ -->
+<button id="prev" onclick="prevclick()" >prev</button>
+
+<img id="image" src="https://camhung.net/wp-content/uploads/2021/08/tieu-su-ronaldo.jpg" alt="">
+<button id="next" onclick="nextclick()">next</button>
+
+
+<script>
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
+    let image = document.getElementById("image");
+
+    function prevclick(){
+        image.setAttribute('src','https://camhung.net/wp-content/uploads/2021/08/tieu-su-ronaldo.jpg' );
+    }
+    function nextclick(){
+        image.setAttribute('src','https://stosilo.com/wp-content/uploads/2021/09/gioi-truyen-thong-chau-au-khen-ngoi-ronaldo-het-loi-sau-cu-dup-tai-elp.jpeg');
+    }
+</script>
+</body>
+
+</html>

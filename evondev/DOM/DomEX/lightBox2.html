@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>lightbox2</title>
+</head>
+<style>
+    .wrapper {
+        width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 100px auto;
+
+    }
+
+    .image {
+        width: 22%;
+        height: 200px;
+        overflow: hidden;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .image img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        transition: all 0.3s;
+
+    }
+
+    .image img:hover {
+        transform: scale(1.2);
+        transition: all 0.3s;
+        cursor: zoom-in;
+    }
+
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999999;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.8);
+    }
+
+    .lightbox-content {
+        width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 25px;
+        position: relative;
+    }
+
+    .lightbox-content img {
+        max-height: 400px;
+        width: 90%;
+        object-fit: cover;
+        border-radius: 4px;
+        user-select: none;
+    }
+
+    .lightbox-content i {
+        color: white;
+        font-size: 60px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .close {
+        color: white;
+        font-size: 60px;
+        cursor: pointer;
+        flex-shrink: 0;
+        position: absolute;
+        right: 0;
+        top: -50px;
+    }
+
+    .show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1486486704382-8ee6f7754a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1595053863679-9c38eb06b025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1462804993656-fac4ff489837?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1595053863908-c3ef581bd036?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1605851289636-ef15cb6e38ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="">
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1576629679906-08e08bfaed82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+                alt="">
+        </div>
+    </div>
+    <div class="lightbox">
+        <div class="lightbox-content ">
+            <i class="fa fa-close close"></i>
+            <i class="fa-solid fa-angle-left lightbox-prev"></i>
+            <img src="https://images.unsplash.com/photo-1605851289636-ef15cb6e38ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="" class="lightbox-image">
+            <i class="fa-solid fa-angle-right lightbox-next"></i>
+        </div>
+    </div>
+</body>
+<script>
+    const images = document.querySelectorAll(".image");
+    const lightbox = document.querySelector(".lightbox");
+    const lightboxImage = document.querySelector(".lightbox-image");
+    const cloSe = document.querySelector(".close");
+    const next = document.querySelector(".lightbox-next");
+    const prev = document.querySelector(".lightbox-prev");
+    const wrapper = document.querySelector(".wrapper");
+
+    // gan su kien click cho image
+    // duyet mang forEach do lay ra imgae
+
+    let current = 0;
+    images.forEach((item, index) => {
+        item.addEventListener("click", lightboxShow)
+    });
+
+
+    function lightboxShow(e) {
+        lightbox.classList.add("show")
+        //lay src cua tung anh
+        srcImage = e.target.getAttribute("src");
+        lightboxImage.setAttribute("src", srcImage)
+    }
+
+    //nut close 
+    cloSe.addEventListener("click", function (e) {
+        lightbox.classList.remove("show")
+    })
+
+    //nut esc thoat
+    document.body.addEventListener("keydown", function (e) {
+        if (e.keyCode == 27) {
+            lightbox.classList.remove("show")
+        }
+    })
+
+    //click ra ngoài
+    document.body.addEventListener("click", function (e) {
+        if (!wrapper.contains(e.target)) {
+            lightbox.classList.remove("show")
+        }
+    })
+    //nut prev
+    // next.addEventListener("click", function (e) {
+    //     if (current > 0) {
+    //         current = current + 1
+    //         lightboxShow()
+    //     }
+    // })
+
+
+
+</script>
+
+</html>

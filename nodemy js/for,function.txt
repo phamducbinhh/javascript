@@ -1,0 +1,13 @@
+//for(điểm bắt đầu var x = 0;điểm kết thúc x<100;bước nhảy x=x+10){
+    code
+}
+*node:vòng lặp chạy liên tục dừng lại khi điều kiện thỏa mãn
+
+
+
+
+//function 
+function tên (tham số1,tham số 2){
+
+    return // trả về kết quả
+}

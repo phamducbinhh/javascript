@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // vòng lặp do while
+      var x = 0;
+
+      while (x < 5) {
+        console.log(x);
+        x++;
+      }
+
+      for (i = 20; i <= 50; i++) {
+        console.log(i);
+      }
+
+      arr = [1, 2, 3, 4, 5, 6, 7];
+      for (i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+
+      var arr = [3, 5, 7, 9, 1, 6, 54, 68, 2, 4, 6, 8];
+      //tính tổng các phần tử trong arr
+      var tong = 0;
+      for (i = 0; i < arr.length; i++) {
+        tong += arr[i];
+      }
+      console.log("tổng các phần tử trong mảng là:" + tong);
+      //tích  các phần tử trong mảng arr
+      var tich = 1;
+      for (i = 0; i < arr.length; i++) {
+        tich *= arr[i];
+      }
+      console.log("tích các phần tử trong arr là:" + tich);
+      //   duyệt arr từ cuối lên đầu
+      for (i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+      }
+      //cách 2
+      // arr.reverse();
+      // console.log(arr);
+
+      //log ra 5 phần tử cuối trong array
+      for (i = arr.length - 1; i >= arr.length - 5; i--) {
+        console.log("5 phần tử cuối trong array là:" + arr[i]);
+      }
+
+      //log ra các số lẻ trong arr
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 1) {
+          console.log("các số lẻ là:" + arr[i]);
+        }
+      }
+
+      //duyệt các ptu trong object
+      var data = {
+        name: "binh",
+        age: 20,
+        mark: {
+          toan: 7,
+          ly: 7,
+          hoa: 6,
+        },
+      };
+      //dùng for in để duyệt
+      for (var key in data) {
+        console.log("cac phan tu trong object la :" + data[key]);
+      }
+      //tính tổng điểm
+      var tong = 0;
+      for (var key in data.mark) {
+        tong += data.mark[key];
+      }
+      console.log("tong diem cua binh la:" + tong);
+
+      //   //=========================================
+      //ví dụ về function
+      // viết function kiểm tra số truyền vào là chẵn hay lẻ
+      function num(n) {
+        if (n % 2 == 0) {
+          return "là số chẵn";
+        } else {
+          return " là số lẻ";
+        }
+      }
+      console.log(num(4));
+      //   ===========================================
+      //bài tập
+      //     Bài 1: cho array = [1,5,7,8,9,15,8]
+      arr = [1, 5, 7, 8, 9, 15, 8];
+      // 1.1 in ra các số chẵn của mảng
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+          console.log("số chẵn là :" + arr[i]);
+          // 1.2 in ra các số lẻ của mảng
+        } else if (arr[i] % 2 == 1) {
+          console.log("số lẻ là :" + arr[i]);
+        } else {
+          console.log("số thập phân" + arr[i]);
+        }
+      }
+      // 1.3 in ra các số lớn hơn hoặc bằng 5 của mảng
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] >= 5) {
+          console.log("các số lớn hơn hoặc bằng 5 ;" + arr[i]);
+        }
+      }
+      // 1.4 Cộng tổng các số chia hết cho 5 của mảng
+      var tongchia5 = 0;
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] % 5 == 0) {
+          console.log("các số chia hết cho 5 là :" + arr[i]);
+          tongchia5 += arr[i];
+        }
+      }
+      console.log("tổng các số chia hết cho 5 là:" + tongchia5);
+
+      // 1.5 Tìm ra tích 3 số đầu của mảng array
+      var tich3so = 1;
+      for (i = 0; i < 3; i++) [(tich3so *= arr[i])];
+      console.log("tích của 3 số đầu mảng là :" + tich3so);
+      // 1.6 Tính tổng 3 phần tử cuối của mảng
+      var tong3so = 0;
+      for (i = 4; i < arr.length; i++) {
+        //đếm thứ tự trong mạng số 9 bắt đầu từ vị trí số 4 nên lấy i = 4
+        tong3so += arr[i];
+      }
+      console.log("tổng 3 số cuối là:" + tong3so);
+      // 1.7 Tìm xem trong array có phần tử nào là số 5 không?
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] == 5) {
+          console.log(arr[i]);
+        }
+      }
+
+      //       Bài 2: Định nghĩa 1 function tính diện tích hình tròn gồm 1 đối số truyền sao là bán kính của hình tròn. Ví dụ
+      // function dienTich(r){
+      // 	//viết công thức tính hình tròn vào đây
+      // 	//r là bán kính đường tròn
+      // }
+      // Thực hiện : dienTich(5) để in ra kết quả
+      function dientich(r){
+         return 3.14*r*r;
+      }
+      console.log(dientich(5));
+
+
+      // tính tổng arr
+      var arr = [1,2,3]
+      var arr3 = [3,4,5,6,7,8]
+      function tong(arr2){
+        var tong = 0;
+        for(i=0;i<arr2.length;i++){
+          tong+=arr2[i];
+        }
+        return tong;
+      }
+      var x = tong(arr)
+      var z = tong(arr3)
+      console.log('tong la:'+x);
+      console.log('tong la:'+z);
+    </script>
+  </body>
+</html>

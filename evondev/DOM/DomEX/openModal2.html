@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>modal-show</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        background-image: linear-gradient(45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%);
+    }
+
+    .button {
+        padding: 20px 40px;
+        border: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 12px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        cursor: pointer;
+    }
+
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-inner {
+        width: 450px;
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: capitalize;
+
+    }
+
+    .modal-header {
+        padding: 15px;
+        background: #E26E70;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .text {
+        font-size: 18px;
+        color: #fff;
+
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-body h2 {
+        color: #E26E70;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .modal-footer {
+        padding: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .close {
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 5px;
+        background: #E26E70;
+        color: white;
+        cursor: pointer;
+    }
+
+    .modal-close {
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
+<body>
+    <button class="button">Open Modal</button>
+    <div class="modal hide">
+        <div class="modal-inner">
+            <div class="modal-header">
+                <h1 class="text">welcome to Evondev</h1>
+                <i class="fa fa-times modal-close"></i>
+            </div>
+            <div class="modal-body">
+                <h2>Modal</h2>
+                <p>đây là phần body</p>
+            </div>
+            <div class="modal-footer">
+                <button class="close">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const button = document.querySelector(".button");
+    const modal = document.querySelector(".modal")
+    const remove = document.querySelector(".modal-close")
+    const closeBtn = document.querySelector(".close")
+    //cách đầy đủ
+    button.addEventListener("click", function (e) {
+        modal.classList.remove("hide")
+    })
+    remove.addEventListener("click", function () {
+        modal.classList.add("hide")
+    })
+    closeBtn.addEventListener("click", function () {
+        modal.classList.add("hide")
+    })
+    //khi click ra bên ngoài màn hình
+    modal.addEventListener("click", function (e) {
+        if (e.target == e.currentTarget) {
+            modal.classList.add("hide")
+        }
+    })
+
+    //cách gọn
+
+    // function handleClick() {
+    //     modal.classList.toggle("hide")
+    // }
+
+    // button.addEventListener("click", handleClick);
+    // remove.addEventListener("click", handleClick);
+    // closeBtn.addEventListener("click", handleClick);
+    // modal.addEventListener("click", function (e) {
+    //     if (e.target === e.currentTarget) {
+    //         handleClick();
+    //     }
+    // })
+
+</script>
+
+</html>

@@ -1,0 +1,6 @@
+-conditional
+-function 
+-switch case
+
+// *callback:là function được truyền vào tham số của function khác
+// callback giup tái sử dụng logic, tránh lặp lại code

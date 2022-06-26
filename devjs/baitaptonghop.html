@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>BÀI TẬP THỰC HÀNH JAVA SCRIPT</h2>
+
+    <form action="">
+        <label for="">số điện tiêu thụ</label>
+        <input type="text" name="" id="soDien">
+        <p>Tiền thuê bao hàng tháng : 10 000 vnđ</p>
+        <button type="button" onclick="tinhtiendien()">tính tiền</button>
+        <h1 id="sum"></h1>
+    </form>
+
+    <script>
+        // 1. Nhập vào tên sinh viên và tuổi sinh viên. In ra năm sinh của sinh viên đó
+        //lấy năm hiện tại trừ đi tuổi thì ra năm sinh
+        var tuoi = 15;
+        var d = new Date();
+        var year = d.getFullYear();
+        var namsinh = year - tuoi;
+        console.log('năm hiện tại là: ' + d);
+        console.log('năm sinh của sinh viên là: ' + namsinh);
+        // 2. Nhập vào 1 năm, kiểm tra năm đó có phải là năm nhuận hay không
+        function nam(year) {
+            if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+                return 'năm nhập vào là năm nhuận';
+            } else {
+                return 'năm nhập vào không phải năm nhuận';
+            }
+        }
+        console.log(nam(2020));
+
+    //     // 6. In ra các số trong khoảng 1-100:
+    //     // - Số chẵn
+    //     // - Số nguyên tố
+    //     function kiemtra_snt(n){
+    //         let check_snt = true; //là số nguyên tố...và ngược lại
+    //         if(n<2){
+    //             check_snt = false; // không là số nguyên tó
+    //         }
+    //         for(i=2;i<n/2;i++){
+    //             if(n%i == 0){
+    //                 check_snt = false;
+    //             }
+    //         }
+    //         return check_snt;
+    //     }
+    //     let arrSnt = [];
+    //     for( let i = 1;i<100;i++){
+    //         if (kiemtra_snt(i) == true){
+    //             arrSnt.push(i);
+    //         }
+    //     }
+        
+    //     console.log(arrSnt);
+    //     // - Số hoàn hảo
+    //    function KTHH(n){
+    //        let check_shh = false;
+    //        let sum = 0;
+    //        for(i=1;i<=n/2;i++){
+    //            if(n%1 == 0){
+    //                sum+=i; // tổng các ước
+    //            }
+    //        }
+    //        if(sum == n % n !=0){
+    //            check_shh = true;
+    //        }
+    //        return check_shh;
+    //    }
+    //    let arrSHH =[];
+    //    for(let i = 1; i<=100;i++){
+    //        if(KTHH(i) == true){
+    //            arrSHH.push(i);
+    //        }
+    //    }
+    //    console.log(arrSHH);
+    //         7. Khai báo và nhập dữ liệu cho mảng 1 chiều gồm 5 phần tử số nguyên, thực
+    //     hiện
+    //     - Tính tổng các phần tử có giá trị lẻ trong mảng (tạo hàm - function)
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        function num(arr) {
+            var tong = 0;
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 1) {
+                    console.log('các số lẻ là:' + arr[i]);
+                    tong += arr[i]
+                } else {
+                    console.log('các số chẵn là:' + arr[i]);
+                }
+            }
+            return tong;
+        }
+        console.log('tổng các số lẻ được in ra là :' + num(arr));
+        // // tổng các số chẵn
+        function cong(arr) {
+            var tong = 0;    
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    tong += arr[i]
+                }
+            }
+            return tong;
+        }
+        console.log('tổng các số chẵn được in ra là :' + cong(arr));
+        // // - In ra các phần tử là số nguyên tố (tạo hàm - function)
+        function kiemtra(num) {
+            var kq = "la so nguyen to";
+            for (i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    kq = "khong  phai so nguyen to";
+                }
+            }
+            return kq;
+        }
+        console.log(kiemtra(8));
+
+        // //  5. Tính tiền điện tiêu thụ hàng tháng của hộ gia đình. Biết:
+        // // - Số điện tiêu thụ trong tháng được tính bằng:
+        // // Chỉ số mới - chỉ số cũ (nhập từ bàn phím)
+        // // - Giá điện được tính như sau:
+        // // 0-50: 700
+        // // 50-100: 900
+        // // 100-150: 1100
+        // // >150: 1300
+        // // - Tiền thuê bao hàng tháng: 10000
+        // // - Giá điện tiêu thụ tháng = thuê bao + điện tiêu thụ
+
+        // //cách1
+        var sodien = 50;
+        var thuebao = 10000;
+        var tiendien = thuebao + sodien;
+        if (sodien <= 50) {
+            tiendien = sodien * 700
+        } else if (sodien < 100) {
+            tiendien = 50 * 700 + (sodien - 50) * 900
+        } else if (sodien < 150) {
+            tiendien = 50 * 700 + 50 * 900 + (sodien - 100) * 1100
+        } else {
+            tiendien = (50 * 700) + (50 * 900) + (50 * 1100) + (sodien - 150) * 1300
+        }
+        console.log(tiendien + 10000);
+
+        // // cách 2
+
+        // // in số tiền điện ra màn hình
+        function tinhtiendien() {
+            var input = document.getElementById('soDien');
+            var value = input.value;
+            var sumPrice = 0;
+            if (value > 0 && value <= 50) {
+                sumPrice = value * 700
+            } else if (50 <= value && value < 100) {
+                sumPrice = (50 * 700) + (value - 50) * 900
+            }
+            else if (100 < value && value <= 150) {
+                sumPrice = (50 * 700) + (50 * 900) + (value - 100) * 1100
+            }
+            else {
+                sumPrice = (50 * 700) + (50 * 900) + (50 * 1100) + (value - 150) * 1300
+            }
+            document.getElementById('sum').innerHTML = "tổng tiền phải trả là:" + (sumPrice + 10000);
+        }          
+    </script>
+</body>
+
+</html>

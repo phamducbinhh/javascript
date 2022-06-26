@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .form-login {
+        width: 500px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 1.5rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .form-login input {
+        padding: 15px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        width: 100%;
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .form-login button {
+        display: block;
+        margin: auto;
+        padding: 15px 10px;
+        background: #2979FF;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <form class="form form-login ">
+        <input type="text" class="input" name="username" placeholder="text" id="username">
+        <input type="password" name="password" placeholder="password" id="password">
+        <button type="submit" id="button">Submit</button>
+    </form>
+</body>
+<script>
+    const form = document.querySelector(".form");
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#password");
+    const button = document.querySelector("#button")
+    // form.addEventListener("submit", function (e) {
+    //     e.preventDefault();
+    //     const username = this.elements["username"].value;
+    //     const password = this.elements["password"].value;
+    //     if (username == "") {
+    //         alert("yêu cầu nhập tài khoản!")
+    //         return;
+    //     }
+    //     if (password.length < 8 || password.length > 16) {
+    //         alert("sai mật khẩu")
+    //         return;
+    //     }
+    // })
+
+    button.addEventListener("click", function (e) {
+        e.preventDefault()
+        if (username.value == "") {
+            alert("Enter username")
+        } if (password.value == "") {
+            alert("Enter password")
+        }
+    })
+</script>
+
+</html>

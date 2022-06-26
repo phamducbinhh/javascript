@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom btvn</title>
+</head>
+
+<body>
+    <!-- Bài 1: Dùng DOM để thay đổi hình ảnh trên giao diện
+    file.htmls -->
+    <img src="" id="imageBai1" width="200" height="200" style="background-size: cover">
+    <button onclick="changeImage()";>Bài 1: Change Image</button>
+
+</body>
+<script>
+var newImages = ["https://source.unsplash.com/random/?cat", "https://source.unsplash.com/random/?dog", "https://source.unsplash.com/random/?horse"];
+
+
+function changeImage() {
+    var randomNum = Math.floor(Math.random() * newImages.length);
+    document.getElementById("imageBai1").src= newImages[randomNum];
+}
+</script>
+
+</html>

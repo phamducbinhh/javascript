@@ -1,0 +1,44 @@
+...arr                liệt kê các phần tử trong array
+
+[...ar1, ...ar2, ...ar3]   
+                      gộp array với nhau
+
+length                trả về độ dài array, string    
+
+indexOf               trả về vị trí của phần tử đầu tiên thỏa mãn
+                      nếu không có thì -1
+
+lastIndexOf           trả về vị trí của phần tử cuối cùng thỏa mãn
+                      nếu không có thì -1               
+
+push                  thêm phần tử vào cuối array
+pop                   xóa 1 phần tử ở cuối array
+
+unshift               chèn vào đầu array
+shift                 xóa 1 phần tử ở đầu array
+
+splice(start, deleteCount, ...phân tử mới)
+                      start : điểm làm mốc 
+                      deleteCount: số lượng phần tử sẽ xóa bắt đầu từ start
+
+slice(start, end)     copy array từ start đến end      
+
+reverse()             đảo ngược thứ tự phần tử trong array
+
+join(signal)          gộp các phần tử trong array tạo ra string mới
+                      signal sẽ được chèn giữa các phần tử trong array
+
+//MAP: Duyệt qua từng phần tử trong mảng và trả ra một mảng mới mà không thay đổi mảng ban đầu
+
+//sort
+// sắp xếp các phần tử trong mảng theo chuẩn unicode-16
+
+*note:
+    //hãy cho biết sự khác nhau giữa forEach và map?
+    - là forEach không return được ,và map trả ra mảng mới dựa vào mảng ban đầu còn forEach thì không,forEach không có return nên sẽ không dừng và thường dùng trong Dom
+
+
+    reference type        kiểu dữ liệu tham chiếu
+                      không lưu trực tiếp giá trị vào biến
+                      mà lưu tham chiếu vào biến
+                      array, object, function

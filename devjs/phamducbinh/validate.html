@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="./validate.css">
+    <title>validate form</title>
+</head>
+
+<body>
+    <form action="#" name="myform"onsubmit="return validate()">
+        <h2>Đăng Ký</h2>
+        <div class="row">
+            <input type="text" name="username" id="username" placeholder="Tên Đăng Nhập">
+            <span id="error1"></span>
+        </div>
+        <div class="row">
+            <input type="password" name="password1" id="password1" placeholder="Nhập Mật Khẩu">
+            <span id="error2"></span>
+        </div>
+        <div class="row">
+            <input type="password" name="password2" placeholder="Nhập lại mật khẩu">
+            <span id="error3"></span>
+        </div>
+        <div class="row">
+            <input type="text" name="email" id="email" placeholder="Nhập Email của bạn">
+            <span id="error4"></span>
+        </div>
+        <div class="row">
+            <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại của bạn">
+            <span id="error5"></span>
+        </div>
+        <div class="row">
+            <input type="date" name="date" id="date" placeholder="Nhập Ngày sinh của bạn">
+            <span id="error6"></span>
+        </div>
+        <div class="row">
+            <div class="gioi_tinh">
+                <input type="radio" name="gioitinh" id="gioitinh"><label>Nam</label>
+                <input type="radio" name="gioitinh" id="gioitinh"><label>Nữ</label>
+            </div>
+            <span id="error7"></span>
+        </div>
+        <div class="row">
+            <input type="text" name="country" id="country" placeholder="Quê quán">
+            <span id="error8"></span>
+        </div>
+        <div class="row">
+            <input type="submit" value="Đăng Nhập" id="btn_register">
+        </div>
+    </form>
+</body>
+<script src="./validate.js"></script>
+
+</html>

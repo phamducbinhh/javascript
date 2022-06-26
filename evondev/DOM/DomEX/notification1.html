@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notification</title>
+</head>
+<style>
+    .noti {
+        position: fixed;
+        left: 15px;
+        bottom: 15px;
+        background-color: rgb(240, 240, 240);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+        display: flex;
+        max-width: 400px;
+        overflow: hidden;
+        height: 130px;
+        transform: translateY(150%);
+        animation: noti 4s forwards infinite linear;
+    }
+
+    .noti_image {
+        width: 30%;
+        margin-right: 10px;
+        object-fit: cover;
+        border-radius: 7px;
+
+    }
+
+    @keyframes noti {
+
+        20%,
+        80% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(150%);
+        }
+    }
+</style>
+
+<body>
+</body>
+<script>
+    //viết 1 fucntion tạo ra thông báo
+    function createNoti(title = "Welcome to Notification") {
+        const template = `    <div class="noti">
+        <img src="https://source.unsplash.com/random" alt="" class="noti_image">
+        <div class="noti-content">
+            <h3 class="noti-title">${title}</h3>
+            <p class="noti-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quisquam deserunt voluptate quo dolores dignissimos.</p>
+        </div>
+    </div>
+`
+        const body = document.querySelector("body");
+        body.insertAdjacentHTML("afterbegin", template);
+    }
+
+    const randomData = [
+        "welcome to javascript",
+        "welcome to ReactJS",
+        "welcome to React Native",
+        "welcome to PHP",
+        "welcome to NodeJs"
+    ]
+
+    let lastTitle;
+    const timer = setInterval(function () {
+        const item = document.querySelector(".noti")
+        if (item) item.parentNode.removeChild(item)
+        const title = randomData[Math.floor(Math.random() * randomData.length)]
+        if (lastTitle !== title) {
+            createNoti(title);
+        }
+        lastTitle = title;
+    }, 4000)
+
+</script>
+
+</html>

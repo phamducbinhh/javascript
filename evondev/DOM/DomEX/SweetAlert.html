@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>alert</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .sweet-alert {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        max-width: 450px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        align-items: center;
+        transform: translateX(150%);
+        transition: 0.25s;
+        animation: identifier 2s linear 1;
+
+    }
+
+    .fa-check {
+        color: greenyellow;
+        padding: 4px;
+        border: 2px solid greenyellow;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+    .sweet-text {
+        font-weight: 300;
+        line-height: 1.4;
+    }
+
+    @keyframes identifier {
+
+        20%,
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <!-- <div class="sweet-alert">
+        <i class="fa fa-check"></i>
+        <p class="sweet-text">Chào mừng bạn đến với Đức Bình Mobile</p>
+    </div> -->
+
+    <button class="button">Demo</button>
+</body>
+<script>
+    window.addEventListener("load", function (e) {
+
+
+        function render() {
+
+            const template = ` <div class="sweet-alert">
+            <i class="fa fa-check"></i>
+            <p class="sweet-text">Chào mừng bạn đến với Đức Bình Mobile</p>
+        </div>`
+            document.body.insertAdjacentHTML("beforeend", template)
+        }
+
+        const button = document.querySelector(".button")
+        button.addEventListener("click", function (e) {
+            render()
+
+            const sweet = document.querySelector(".sweet-alert")
+            if(sweet){
+                setTimeout(function(){
+
+                    sweet.parentElement.removeChild(sweet)
+                },2000)
+            }
+        })
+    })
+</script>
+
+</html>

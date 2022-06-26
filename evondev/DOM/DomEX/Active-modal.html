@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>Active modal</title>
+</head>
+<style>
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25 linear;
+    }
+
+    .modal-content {
+        max-width: 600px;
+        padding: 40px;
+        border-radius: 20px;
+        background-image: linear-gradient(#614385, #516395);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        color: #fff;
+        position: relative;
+    }
+
+    .modal-esc {
+
+        padding: 10px 0px;
+    }
+
+    .modal-esc p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .modal-content i {
+        font-size: 25px;
+        position: absolute;
+        top: -10%;
+        right: 0;
+        cursor: pointer;
+    }
+
+    .modal-action {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 50px;
+    }
+
+    .modal-submit {
+        padding: 13px 0px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        background-image: linear-gradient(#43cea2, #185a9d);
+        color: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        overflow: hidden;
+        margin: 0 5px;
+    }
+
+    .modal-submit:hover {
+        cursor: pointer;
+        background-image: linear-gradient(#ff512f, #dd2476);
+        transition: linear 0.3s;
+        transform: scale(1.1);
+    }
+
+    .is-show {
+        opacity: 1;
+        visibility: visible;
+        transition: linear 0.4s;
+    }
+
+    .hide {
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <!-- <div class="modal">
+        <div class="modal-content">
+            <i class="fa fa-times modal-close"></i>
+            <div class="modal-esc">
+                <p>React Native là gì?
+                    Được phát triển bởi Facebook, React Native là một framework hướng đến phát triển ứng dụng di động đa
+                    nền tảng.
+
+                    Với sự trợ giúp của React Native, lập trình viên (developer) có thể sử dụng JavaScript để tạo ra
+                    mobile apps (ứng dụng di động) hỗ trợ cho cả nền tảng Android và iOS.</p>
+            </div>
+            <div class="modal-action">
+                <button class="modal-submit">confirm</button>
+                <button class="modal-submit">cancle</button>
+            </div>
+        </div>
+    </div> -->
+</body>
+<script>
+    //dùng js làm html
+    const template = `  <div class="modal">
+        <div class="modal-content">
+            <i class="fa fa-times modal-close"></i>
+            <div class="modal-esc">
+                <p>React Native là gì?
+                    Được phát triển bởi Facebook, React Native là một framework hướng đến phát triển ứng dụng di động đa
+                    nền tảng.
+
+                    Với sự trợ giúp của React Native, lập trình viên (developer) có thể sử dụng JavaScript để tạo ra
+                    mobile apps (ứng dụng di động) hỗ trợ cho cả nền tảng Android và iOS.</p>
+            </div>
+            <div class="modal-action">
+                <button class="modal-submit">confirm</button>
+                <button class="modal-submit">cancle</button>
+            </div>
+        </div>
+    </div>`
+
+    const body = document.querySelector("body");
+    body.insertAdjacentHTML("beforebegin", template);
+    const modal = document.querySelector(".modal");
+    if (modal) {
+        setTimeout(function () {
+            modal.classList.add("is-show")
+        }, 1500);
+    }
+</script>
+
+</html>

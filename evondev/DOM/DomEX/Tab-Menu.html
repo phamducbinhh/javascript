@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAI TAP TAB</title>
+</head>
+<style>
+    .tab {
+        background-color: white;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 1.5rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 15px;
+    }
+
+    .tab-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .tab-wrapper {
+
+        padding-top: 20px;
+
+    }
+
+    .tab-list-item {
+        background: #ccc;
+        padding: 8px 25px;
+        border: 0;
+        border-radius: 9999px;
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    /* .tab-list-item:hover {
+        background-color: #2E89FF;
+        cursor: pointer;
+        transition: 0.25s;
+    } */
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+        background: #fff;
+        color: #333;
+    }
+
+    .title {
+        font-size: 16px;
+
+    }
+
+    .active {
+        color: white;
+        background: #2E89FF;
+        pointer-events: none;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="tab">
+        <div class="tab-list">
+            <div class="tab-list-item active" data-tab="1">
+                popular
+            </div>
+            <div class="tab-list-item" data-tab="2">
+                hot
+            </div>
+            <div class="tab-list-item" data-tab="3">
+                latest
+            </div>
+        </div>
+        <div class="tab-wrapper">
+            <div class="tab-content active" data-tab="1">
+                <h3 class="title">
+                    Javascript là một ngôn ngữ phổ biến nhất hiện nay
+                </h3>
+            </div>
+            <div class="tab-content" data-tab="2">
+                <h3 class="title">
+                    ReactJs là 1 thư viện của Javascript
+                </h3>
+            </div>
+            <div class="tab-content" data-tab="3">
+                <h3 class="title">
+                    React Native để làm application mobile
+                </h3>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const tabItems = document.querySelectorAll(".tab-list-item ")
+    const tabContents = document.querySelectorAll(".tab-content")
+
+    tabItems.forEach((item, index) => {
+        const content = tabContents[index]
+        item.addEventListener("click", function (e) {
+            //xóa hết tất cả class active ở tab item
+            document.querySelector(".tab-list-item.active").classList.remove("active")
+            document.querySelector(".tab-content.active").classList.remove("active")
+            // [...tabItems].forEach((item) => item.classList.remove("active")) //hoặc dùng cách này
+            //add class active vào tab còn lại khi click
+            this.classList.add("active")  //dùng this hoặc e.target
+            content.classList.add("active")
+        })
+    })
+
+
+
+</script>
+
+</html>

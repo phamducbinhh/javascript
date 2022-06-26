@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>Todolist</title>
+</head>
+<style>
+    .todo {
+        padding: 15px 25px;
+        margin: 25px auto;
+        max-width: 400px;
+        background-image: linear-gradient(#93a5cf, #e4efe9);
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .todo-form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .todo-input {
+        padding: 15px;
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .todo-submit {
+        padding: 16px 18px;
+        border: 0;
+        background-color: #2979ff;
+        overflow: hidden;
+        text-transform: capitalize;
+        color: #fff;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        cursor: pointer;
+    }
+
+    .todo-list {
+        margin-top: 20px;
+    }
+
+    .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .todo-remove {
+        color: red;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="todo">
+        <form class="todo-form" autocomplete="off">
+            <input type="text" name="todo" placeholder="Enter your task" class="todo-input">
+            <button class="todo-submit" type="submit">add</button>
+        </form>
+        <div class="todo-list">
+            <!-- <div class="todo-item">
+                <span class="todo-text">Learning React Native</span>
+                <i class="fa fa-trash todo-remove"></i>
+            </div> -->
+        </div>
+    </div>
+</body>
+<script>
+    window.addEventListener("load", function () {
+        //khai bao
+        const form = document.querySelector(".todo-form");
+        const todoList = document.querySelector(".todo-list")
+
+
+        //localstorage
+        // let todos = localStorage.length > 0 ? JSON.parse(localStorage.getItem("todoList")) : [];
+        // if (Array.isArray(todos) && todos.length > 0) {
+        //     [...todos].forEach((item) => {
+        //         createTodo(item)
+        //     })
+        // }
+
+
+
+
+
+        function createTodo(title) {
+            const template = `  <div class="todo-item">
+                <span class="todo-text">${title}</span>
+                <i class="fa fa-trash todo-remove"></i>
+            </div>`
+            todoList.insertAdjacentHTML("beforeend", template)
+        }
+
+
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault()
+            const todoval = this.elements["todo"].value;
+            // Main code
+            createTodo(todoval);
+            // todos.push(todoval);
+            // localStorage && localStorage.setItem("todoList", JSON.stringify(todos))
+            //save to localStorage
+            this.elements["todo"].value = "";
+        })
+
+
+        //     //remove
+        //     todoList.addEventListener("click", function (e) {
+        //         if (e.target.matches(".todo-remove")) {
+        //             const deleteTodo = e.target.parentNode;
+        //             deleteTodo.parentNode.removeChild(deleteTodo);
+        //         }
+        //     })
+
+    });
+</script>
+
+</html>

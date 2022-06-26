@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        padding: 10px;
+    }
+</style>
+<body>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <button onclick="check()">check-color</button>
+</body>
+<script>
+            //4. Xây dựng chương trình có 10 thẻ div và một button. Khi click vào button thì
+            // sẽ đổi màu cho các thẻ div. Thẻ div ở vị trí chẵn sẽ có màu đỏ, vị trí lẻ có
+            function check(){
+                let div = document.getElementsByTagName("div");
+                for(i=0;i<div.length;i++){
+                    if((i+1) % 2 == 0){
+                        div[i].style.background = "red";
+                    }
+                    else{
+                        div[i].style.background = "blue";
+                    }
+                }
+            }
+            
+</script>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js buoi 1 nodemy</title>
+</head>
+
+<body>
+    <h1>Tổng Hợp BTVN DEMO</h1>
+    <script language="javascript">
+        //Bài 1: cho arr = [1,5,7,8,9,15,8]
+        arr = [1, 5, 7, 8, 9, 15, 8]
+        var tongchia5 = 0;
+        var tich3pt = 1;
+        var tong3pt_cuoi = 0;
+        // 1.1 in ra các số chẵn của mảng
+        // 1.2 in ra các số lẻ của mảng
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                console.log('số chẵn là: ' + arr[i]);
+            } else {
+                console.log('số lẻ là:' + arr[i]);
+            }
+            // 1.3 in ra các số lớn hơn hoặc bằng 5 của mảng
+            if (arr[i] >= 5) {
+                console.log('các số lớn hơn hoặc bằng 5 là :' + arr[i]);
+            }
+            // 1.4 Cộng tổng các số chia hết cho 5 của mảng
+            if (arr[i] % 5 === 0) {
+                tongchia5 += arr[i]
+            }
+            // 1.7 Tìm xem trong array có phần tử nào là số 5 không?
+            if (arr[i] === 5) {
+                console.log('có phần tử số 5 trong arr:' + true);
+            }
+        }
+        console.log('tổng các số chia hết cho 5 là:' + tongchia5);
+        // 1.5 Tìm ra tích 3 số đầu của mảng array
+        for (i = 0; i < 3; i++) {
+            tich3pt *= arr[i]
+        }
+        console.log('tích 3 số đầu là :' + tich3pt);
+        // 1.6 Tính tổng 3 phần tử cuối của mảng
+        for (i = 4; i < arr.length; i++) {
+            tong3pt_cuoi += arr[i]
+        }
+        console.log('tổng 3 phần tử cuối của mảng là:' + tong3pt_cuoi);
+        // 1.8 Đếm số phần tử = 8 trong mảng;
+        var arr2 = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] === 8) {
+                arr2++;
+            }
+        }
+        console.log('số phần tử = 8 trong mảng là:' + arr2);
+
+
+        // ====================================================
+
+        // Bài 2: Định nghĩa 1 function tính diện tích hình tròn gồm 1 đối số truyền sao là bán kính của hình tròn. Ví dụ
+        // function dienTich(r){
+        // 	//viết công thức tính hình tròn vào đây
+        // 	//r là bán kính đường tròn
+        // } 
+        // Thực hiện : dienTich(5) để in ra kết quả
+        function S_tron(r) {
+            var pi = 3.14;
+            return pi * r * r;
+        }
+        console.log('diện tich hình tròn là: ' + S_tron(10));
+
+
+        // =========================================================
+
+        //Bài 1: Khai báo 1 function tính tổng 2 số, tham số đầu vào của function là 2 do người dùng nhập vào. Khi chạy function thì sẽ thực tính tổng 2 số vừa truyền vào.
+        // Tương tự xây dựng function tính hiệu 2 số, tích 2 số, thương 2 số
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log("tổng của 2 tham số là: " + sum(5, 2));
+
+        // =============================================================
+        // Bài 2: cho 2 số number1 = 10, number2 = 20. Hãy tính tổng hai số number1 và number2 và sau đó kiểm tra xem tổng vừa tính có nhỏ hơn 20 hay không?
+        function sum_tong(num1, num2) {
+            var tong = num1 + num2
+            if (tong > 20) {
+                return 'tổng lớn hơn 20';
+            } else {
+                return 'tổng nhỏ hơn 20';
+            }
+        }
+
+        console.log(sum_tong(10, 5));
+
+        // ====================================================
+        // Bài 3: In ra các số lẻ nhỏ hơn 100
+        for (i = 0; i < 100; i++) {
+            if (i % 2 === 1) {
+                console.log(i + ": là số lẻ");
+            }
+        }
+
+        //=======================================================
+        // Bài 4: Viết 1 function kiểm tra số nhập vào có phải là số nguyên tố hay không?
+        function kiemtra(n) {
+            var ketqua = 'là số nguyên tố';
+            for (i = 2; i < n; i++) {
+                if (n % 1 === 0) {
+                    ketqua = 'không phải số nguyên tố'
+                }
+            }
+            return ketqua
+        }
+        console.log(kiemtra(28));
+
+        // =========================================================
+        // Bài 1.
+        // cho array = [1,6,8,7,6,9]
+        array = [1, 6, 8, 7, 6, 9]
+        console.log('độ dài phần tử arr là: ' + array.length);
+        // a, array trên có bao nhiêu phần tử
+        // b, hãy in ra phần tử đầu tiên và phần tử cuối cùng trong array
+        console.log('phần tử đầu tiên và phần tử cuối cùng là: ' + array[5]);
+        // c, hãy thêm số 5 vào cuối array
+        console.log(array.push(5));
+        console.log(array);
+        // d, hãy thay đổi giá trị của phần tử đầu tiên và cuối cùng trong array thành số 10
+        array[0] = 10;
+        array[6] = 10;
+        console.log(array);
+        // ==========================================================
+
+        // Bài 6, 
+        arr = [3, 5, 4, 9, 8, 1, 10];
+        // a, hãy tính tổng của phần tử đầu và phần tử cuối // 3 + 10
+        console.log(arr[0] + arr[6]);
+        // b, hãy thêm số 20 vào cuối array trên và tính lại tổng của phần tử đầu và phần tử cuối 
+        console.log(arr.push(20));
+        console.log(arr);
+        console.log(arr[0] + arr[7]);
+        // // 3 + 20
+
+
+        // =========================================================
+        // bài 1:
+        // cho  array = [1,5,7,8,9,15] sử dụng map hoặc filter
+        arr = [1, 5, 7, 8, 9, 15]
+        // bài 1.1: // * in ra các số chẵn trong mảng
+        var newArr = arr.filter(function (num) {
+            return num % 2 === 0;
+        })
+        console.log('số chẵn trong mảng là :' + newArr);
+        // bài 1.2: // * in ra các số lẻ  trong mảng
+        var newArr2 = arr.filter(function (value) {
+            if (value % 2 === 1) {
+                return true;
+            }
+        })
+        console.log('số lẻ trong mảng là: ' + newArr2);
+        // bài 1.3: // * in ra các số lớn hơn hoặc bằng 5 trong mảng
+        var newArr3 = arr.filter(function (index) {
+            if (index >= 5) {
+                return true
+            }
+        })
+        console.log('các số lớn hơn hoặc bằng 5 là :' + newArr3);
+        // bài 1.4:// *in ra các số chia hết cho 5 trong mảng
+        var arr4 = arr.filter(function (key) {
+            if (key % 5 === 0) {
+                return true
+            }
+        })
+        console.log('các số chia hêt cho 5 trong mảng là:' + arr4);
+        // bài 1.5:// Tìm các số >5 của mảng và tăng các giá trị đó lên 1 đơn đơn vị
+        var newArr4 = arr.filter(function (key1) {
+            return key1 > 5;
+        })
+        var mynewArr4 = newArr4.map(function (key1) {
+            return key1 + 1;
+        })
+        console.log('các số lớn hơn 5 của mảng và tăng các giá trị đó: ' + mynewArr4);
+        // bài 1.6: dùng slice để copy mảng từ phần tử số 3 đến phần tử cuối cùng
+        arr = [1, 5, 7, 8, 9, 15]
+        var arrcopy = arr.slice(3)
+        console.log('phần tử được copy là: ' + arrcopy);
+        // bài 1.7: .splice để xóa 1 phần tử trong mảng
+        var arr = [1, 5, 7, 8, 9, 15]
+        arr.push('binh')   // push phần tử vào cuối mảng
+        console.log('phần tử được lấy ra ' + arr.splice(1, 2));
+        console.log(arr + " là số phần tử còn lại");
+
+        // * dùng vòng for tăng kết quả của các phần tử array lên 2 lần, kết quả sẽ là mảng sau [2,10,14,16,18,30]
+        var arr = [1, 5, 7, 8, 9, 15]
+        for (i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] * 2;
+        }
+        var newArr = arr
+        console.log(newArr);
+
+        // bài 2: cho arr [1,8,5,2,7,6,9,2,6]
+        // a, Hãy lấy ra số lơn nhất trong array
+        var arr = [1, 8, 5, 2, 7, 6, 9, 2, 6];
+        var max = arr.reduce(function (x, y) {
+            return (x > y) ? x : y;
+        });
+
+        console.log('số lớn nhất trong mảng: ' + max);
+
+        //cách 2
+        var arr = [1, 8, 5, 2, 7, 6, 9, 2, 6];
+        var myArr = Math.max(...arr)
+        console.log('số lớn nhất trong mảng: ' + myArr);
+        // b, Hãy lấy ra số chẵn nhỏ nhất trong array
+        //* sử dụng filter tìm số chẵn
+        var arrChan = arr.filter(function (value, key) {
+            return value % 2 === 0;
+        })
+        //* sử dụng reduce tìm số chẵn nhỏ nhẩt
+        var minArr = arrChan.reduce(function (x, y) {
+            return (x < y) ? x : y;
+        })
+        console.log(arrChan);
+        console.log('số chẵn nhỏ nhất là : ' + minArr);
+        // c, dùng .sort để sắp xếp mảng tăng dần và giảm dần
+        var sapxepArr = arr.sort(function (a, b) {
+            return a-b;   //a-b là tăng dần và ngược lại b - a là giảm dần
+        })
+        console.log('mảng săp xếp theo chiều tăng :' + sapxepArr);
+
+        // =======================================================================
+        // B3 
+        var arr_5 = [1,9,3,7,6,4,5,2];
+        // Hãy sắp xếp array trên theo thứ tự ngược lại
+        var arr_6 = arr_5.reverse();
+        console.log('sắp xếp array trên theo thứ tự ngược lại '+arr_6);
+
+        // ========================================================================
+        // B4 Dùng vòng lặp for để sắp xếp array sau theo thứ tự tăng dần và giảm dần
+        // var array = [1,9,3,7,6,4,5,2]
+        
+
+
+
+
+
+    </script>
+
+</html>

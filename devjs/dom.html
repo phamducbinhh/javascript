@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>làm quen với dom trong html</title>
+</head>
+
+<body>
+
+    <button id="button">click</button>
+
+  
+
+
+</body>
+<script>
+  const button = document.querySelectorAll('button')[0]
+  const body = document.querySelector('body')
+
+
+  
+  let  count = 0
+  function orange(){
+    body.setAttribute('style','background: orange')
+    button.removeEventListener('click',orange)
+    button.addEventListener('click',black)
+  }
+  function black(){
+    body.setAttribute('style','background: black') //body đang là màu đen
+    button.removeEventListener('click',black) //ta hủy sự kiện màu đen
+    button.addEventListener('click',orange)   //và thêm sự kiện màu cam....
+  }
+
+  button.addEventListener('click',black)
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let test = document.querySelectorAll('img');
+// console.log(test);
+// test[0].setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg')
+
+// let body = document.querySelectorAll('body');
+// body[0].setAttribute('style','background:green')
+
+// let h2 = document.querySelectorAll('h2');
+// console.log(h2[0].classList.add('123123'));
+</script>
+
+</html>

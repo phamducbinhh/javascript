@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>image click</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .image {
+        width: 400px;
+        margin: 15px auto;
+    }
+
+    .img-main {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .img:hover {
+        transform: scale(1.04);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .next-prev {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .prev,
+    .next {
+        font-size: 30px;
+    }
+</style>
+
+<body>
+    <ul>
+        <li><img src="https://images.unsplash.com/photo-1539697808415-0873e6eb16dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNleHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="" class="img"></li>
+        <li><img src="https://images.unsplash.com/photo-1565294124524-200bb738cdb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHNleHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="" class="img"></li>
+        <li><img src="https://images.unsplash.com/photo-1520551149954-41255a5fa237?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHNleHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="" class="img"></li>
+        <li><img src="https://images.unsplash.com/photo-1547072659-ce32013156d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHNleHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="" class="img"></li>
+    </ul>
+
+    <div class="image">
+        <img src="https://images.unsplash.com/photo-1607113553928-777f4bab3bc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fHNleHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="" class="img-main">
+    </div>
+</body>
+<script>
+    const imgClick = document.querySelectorAll(".img");
+    const image = document.querySelector(".img-main");
+    
+    imgClick.forEach((item) => {
+        item.addEventListener("click", function (e) {
+            // document.querySelector(".image").innerHTML = `<img src="${item.getAttribute("src")} class="img-main">`
+            const srcImage = e.target.getAttribute("src");//lưu biến để giữ lại giá trị src
+            image.setAttribute("src", srcImage);
+        });
+    });
+
+</script>
+
+</html>

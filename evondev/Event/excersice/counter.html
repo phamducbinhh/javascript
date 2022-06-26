@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>bài tập counter</title>
+</head>
+<style>
+    .counter {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        height: 100px;
+        align-items: center;
+
+    }
+
+    .counter-descrease,
+    .counter-increase {
+        width: 50px;
+        height: 50px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .counter-number {
+        font-size: 100px;
+        padding: 0 20px;
+        color: rgb(119, 161, 209);
+    }
+</style>
+
+<body>
+    <div class="counter">
+        <button class="counter-descrease">
+            <i class="fa fa-minus"></i>
+        </button>
+        <h1 class="counter-number">0</h1>
+
+        <button class="counter-increase">
+            <i class="fa fa-plus"></i>
+        </button>
+    </div>
+</body>
+
+<script>
+    //gán giá trị cho các button 
+    const buttonMinus = document.querySelector(".counter-descrease");
+    const counter = document.querySelector(".counter-number");
+    const buttonPlus = document.querySelector(".counter-increase");
+    //gán sự kiện click cho 2 nút
+    //khai báo 1 biến để tăng giá trị
+    let valueNumber = parseInt(counter.textContent);
+    buttonPlus.addEventListener("click", function () {
+        valueNumber++;
+        counter.textContent = valueNumber;
+    }); //tăng
+    buttonMinus.addEventListener("click", function () {
+        if(valueNumber <= 0){
+            return 0;
+        }valueNumber--;
+        counter.textContent = valueNumber;
+    }); //giảm
+
+</script>
+
+</html>

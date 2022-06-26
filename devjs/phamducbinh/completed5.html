@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        5. Tính tiền điện tiêu thụ hàng tháng của hộ gia đình. Biết:
+        - Số điện tiêu thụ trong tháng được tính bằng:
+        Chỉ số mới - chỉ số cũ (nhập từ bàn phím)
+        - Giá điện được tính như sau:
+        0-50: 700
+        50-100: 900
+        100-150: 1100
+        >150: 1300
+        - Tiền thuê bao hàng tháng: 10000
+        - Giá điện tiêu thụ tháng = thuê bao + điện tiêu thụ
+    </p>
+</body>
+<script>
+    let soDien = prompt("nhập số điện trong tháng!")
+    let thuebao = 10000;
+    let price = soDien + thuebao;
+
+    if(soDien <= 50){
+        price = 50*700;
+    }else if(soDien <= 100){
+        price = (50*700) + (soDien - 50)*900;
+    }else if(soDien <=150){
+        price = (50*700)+(50*900) + (soDien - 100)*1100;
+    }else{
+        price = (50*700)+(50*900) +(50*1100) +(soDien-150)*1300
+    }
+    alert("giá điện là " + (price +10000))
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập random color</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    .change,.remove{
+        display: inline-block;
+        margin: 200px auto;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        cursor: pointer;
+        color: white;
+        background: orange;
+    }
+
+    .change:hover {
+        background: orangered;
+        transition: 0.25s;
+    }
+</style>
+
+<body>
+    <button class="change">Change Color</button>
+    <button class="remove">remove</button>
+</body>
+<script>
+    //bài tập random color
+    //gọi đến button và body để hiện ra màu
+    const button = document.querySelector(".change");
+    const body = document.querySelector("body");
+    const remove = document.querySelector(".remove")
+    //tạo 1 mảng chứa các mã màu 
+    const randomColor = ["#ffa400", "#00aefd", "#07a787", "#ffb86c", "#2979ff"];
+   //gán sự kiện click nút đổi màu
+    button.addEventListener("click",function(){
+    //tạo  1 biến random
+    const color = randomColor[Math.floor(Math.random() * randomColor.length)]
+    body.style.background= color
+    console.log(color);
+    });
+</script>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>dropdown</title>
+</head>
+<style>
+    .dropdown {
+        max-width: 400px;
+        margin: 50px auto;
+    }
+
+    .dropdown-select {
+        padding: 15px 30px;
+        background-color: orangered;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        cursor: pointer;
+    }
+
+    .dropdown-select * {
+        pointer-events: none;
+    }
+
+    .dropdown-caret,
+    .dropdown-icon {
+        display: block;
+    }
+
+    .dropdown-list {
+        background-color: orangered;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        z-index: 10;
+        display: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        overflow: hidden;
+    }
+
+    .dropdown-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+
+    }
+
+    .dropdown-item * {
+        pointer-events: none;
+    }
+
+    .dropdown-item:hover {
+        background: orange;
+        transition: all 0.3s;
+
+    }
+
+    .show {
+        display: block;
+        transition: all 0.3s;
+    }
+</style>
+
+<body>
+    <div class="dropdown">
+        <div class="dropdown-select">
+            <span class="dropdown-selected">call to action</span>
+            <i class="fa fa-caret-down dropdown-caret"></i>
+        </div>
+        <div class="dropdown-list">
+            <div class="dropdown-item">
+                <span class="dropwdown-text">New Project</span>
+                <i class="fa fa-plus-circle dropdown-icon"></i>
+            </div>
+            <div class="dropdown-item">
+                <span class="dropwdown-text">view profile</span>
+                <i class="fa fa-user dropdown-icon"></i>
+            </div>
+            <div class="dropdown-item">
+                <span class="dropwdown-text">setting</span>
+                <i class="fa fa-cog dropdown-icon"></i>
+            </div>
+            <div class="dropdown-item">
+                <span class="dropwdown-text">logout</span>
+                <i class="fa fa-circle dropdown-icon"></i>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    //khai báo
+    const dropdownSelect = document.querySelector(".dropdown-select");
+    const dropdownList = document.querySelector(".dropdown-list");
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+    const dropdownSelected = document.querySelector(".dropdown-selected");
+    const dropdown = document.querySelector(".dropdown-list");
+    const dropdownAll = document.querySelector(".dropdown");
+    const dropCarret = document.querySelector(".dropdown-caret");
+
+    //gán sự liện click cho dropdownSelect
+    dropdownSelect.addEventListener("click", function (e) {
+        dropdownList.classList.toggle("show")
+        dropCarret.classList.toggle("fa-caret-up")
+    })
+
+
+    //duyệt mảng do dropdownItem là số nhiều 
+    dropdownItems.forEach((item) => {
+        item.addEventListener("click", function (e) {
+            const dropdownText = e.target.querySelector(".dropwdown-text").textContent;
+            dropdownSelected.textContent = dropdownText;
+            dropdownList.classList.remove("show")
+        })
+    })
+
+    //click ra ngoài màn hình
+    document.addEventListener("click", function (e) {
+        if (!dropdownAll.contains(e.target)) {
+            dropdownList.classList.remove("show")
+        }
+    })
+
+    //nút esc
+    document.body.HTML("keydown", function (e) {
+        if (e.keyCode == 27) {
+            dropdownList.classList.remove("show");
+        }
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,21 @@
+1 hiểu về function ,hiểu về cách viết,cách hoạt động
+2 hiểu về kiểu dữ liệu:
+    *object
+    *string
+    *number
+    *undefined
+    *null
+    *boolean
+3 Hiểu về cách thao tác với từng loại dữ liệu, so sánh.  nối chuỗi, ép kiểu, == và === khác nhau chỗ nào. 
+4 Hiểu về cách select 
+        dom element. 
+        getelementbyid và 
+        getlementsbyclassname, 
+        queryselector và 
+        queryselectorall
+5 Hiểu về 
+        event và DOM
+        onload, 
+        click,
+        keypress,
+        mousemove

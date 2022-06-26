@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>show password</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .form {
+        width: 500px;
+        margin: 25px auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        position: relative;
+        padding: 20px;
+    }
+
+    .form input {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        outline: none;
+        border: 1px solid rgb(197, 186, 186);
+        border-radius: 5px;
+    }
+
+    .form .toggle {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 45px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="form">
+        <input type="password" name="password" placeholder="Enter password">
+        <i class="fa fa-eye toggle"></i>
+    </div>
+</body>
+<script>
+    window.addEventListener("load", function () {
+        const showPass = document.querySelector(".toggle")
+        showPass.addEventListener("click", function (e) {
+            const input = this.previousElementSibling;
+
+            const inputType = input.getAttribute("type");
+            if (inputType === "password") {
+                input.setAttribute("type", "text")
+            } else {
+                input.setAttribute("type", "password")
+            }
+        })
+    })
+</script>
+
+</html>

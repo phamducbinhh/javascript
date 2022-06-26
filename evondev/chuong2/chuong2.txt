@@ -1,0 +1,28 @@
+#chương 1 Biến và các kiểu dữ liệu thường gặp
+
+- giới thiệu
+
+
+- js là gì ? 2 cách sử dụng js vào html cơ bản
+
+
+- console.log là gì? tại sao phải dùng clog   ==> để log ra màn hình các giá trị 
+
+
+- biến variables là gì ? tại sao dùng biến =>> biến để lưu trữ dữ liệu ,khi dùng biến sẽ sử dụng được nhiều lần lặp đi lặp lại...
+
+
+    * cách đặt tên biến // camelCase -> evonDev  không nên đặt tên tiếng việt,các từ có dấu,các ký tự đặc biệt.....
+
+
+- delcare variables : khai báo biến 
+
+    * const : là hằng số không được thay đổi giá trị của biến vừa khai báo duy nhất
+
+    * let : thay đổi được giá trị
+
+
+- hoisting // không được console.log trước khi khai báo 1 variables
+
+    * const và let ko bị hoisting
+    * var sẽ bị hoisting

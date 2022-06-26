@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bài lab06</title>
+  </head>
+  <body>
+    <style>
+      .number {
+        text-align: justify;
+        border: 1px solid black;
+      }
+      table {
+        width: 120px;
+        border: 1px solid;
+        margin: 120px auto;
+      }
+      table td input {
+        font-size: 30px;
+      }
+      table td {
+        padding: 20px;
+      }
+    </style>
+    <table>
+      <tr>
+        <td colspan="4">
+          <input type="text" name="number" id="number" class="number" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            type="button"
+            value="1"
+            name="num1"
+            id="num1"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="2"
+            name="num1"
+            id="num2"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="3"
+            name="num1"
+            id="num3"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="+"
+            name="plus"
+            id="plus"
+            onclick="pheptoan(this.value)"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="button"
+            value="4"
+            name="num4"
+            id="num4"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="5"
+            name="num4"
+            id="num5"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="6"
+            name="num4"
+            id="num6"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="-"
+            name="sub"
+            id="sub"
+            onclick="pheptoan(this.value)"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="button"
+            value="7"
+            name="num7"
+            id="num7"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="8"
+            name="num8"
+            id="num8"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="9"
+            name="num9"
+            id="num9"
+            onclick="getValue(this.value)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="*"
+            name="nhan"
+            id="nhan"
+            onclick="pheptoan(this.value)"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input type="button" value="AC" name="ac" id="ac" onclick="reset()" />
+        </td>
+        <td colspan="2">
+          <input
+            type="button"
+            value="="
+            name="equal"
+            id="equal"
+            onclick="ketqua()"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="/"
+            name="chia"
+            id="chia"
+            onclick="pheptoan(this.value)"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      var number = "";
+      var pheptinh = "";
+      function getValue(val) {
+        //lấy giá trị hiện tại của input number
+        num = document.getElementById("number").value;
+        //gán lại giá trị cho number input số nhập sau gán sau
+        document.getElementById("number").value = num + "" + val;
+      }
+      function pheptoan(val) {
+        //lấy ra phép toán và giá trị number input
+        number = document.getElementById("number").value;
+        // gán lạu gái trị cho number input số nhập sau gán sau
+        document.getElementById("number").value = "";
+        pheptinh = val;
+      }
+      function ketqua() {
+        ketquatinh = 0;
+        //thực hiện phép tính tương ứng khi người dùng đã chọn
+        switch (pheptinh) {
+          case "+":
+            ketquatinh =
+              parseInt(number) +
+              parseInt(document.getElementById("number").value);
+            break;
+          case "-":
+            ketquatinh =
+              parseInt(number) -
+              parseInt(document.getElementById("number").value);
+            break;
+          case "*":
+            ketquatinh =
+              parseInt(number) *
+              parseInt(document.getElementById("number").value);
+            break;
+          case "/":
+            ketquatinh =
+              parseInt(number) /
+              parseInt(document.getElementById("number").value);
+            break;
+        }
+        document.getElementById("number").value = ketquatinh;
+      }
+      function reset() {
+        number = "";
+        pheptinh = "";
+        document.getElementById("number").value = "";
+      }
+    </script>
+  </body>
+</html>

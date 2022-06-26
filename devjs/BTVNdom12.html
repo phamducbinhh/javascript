@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Ẩn và hiện thẻ div bằng javascript
+    </h2>
+
+    <p>Sử dụng js để thay đổi thuộc tính none</p>
+
+    <div id="card"; style="margin: 10px 0px;">
+        Phạm Đức Bình
+        2022 
+    </div>
+
+    <input type="button" id="hide" value="ẩn" onclick="hidecontent()">
+
+    <input type="button" id="show" value="Hiển Thị" onclick="showcontent()">
+
+    <script>
+            //12.Xây dựng chương trình gôm 1 thẻ div và 2 button. Khi click vào button 1 thì
+            // ẩn thẻ div, khi click vào button 2 thì hiển thị thẻ div
+            // document.getElementById("hide").onclick=function(){
+            //     document.getElementById("card").style.display = 'none';
+            // };
+            // document.getElementById("show").onclick = function(){
+            //     document.getElementById("card").style.display = 'block';
+            // };
+
+            //cách 2
+            let divs = document.getElementById("card");
+            let hide = document.getElementById("hide");
+            let show = document.getElementById("show");
+
+            function hidecontent(){
+                divs.style.display = 'none';
+            }
+            function showcontent(){
+                divs.style.display = 'block';
+            }
+
+    </script>
+</body>
+</html>

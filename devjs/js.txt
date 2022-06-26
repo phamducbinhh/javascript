@@ -1,0 +1,75 @@
+1.khái niệm
+        2.cú pháp
+        3.các khái niệm cơ bản của một ngôn ngữ lập trình nói chung và js nói riêng:
+            -biến 
+            -kiểu dữ liệu
+            -câu lệnh
+            -khối lệnh
+            -toán tử ,toán hạng,biểu thức...
+        4.các cấu trức điều khiển:(3 loại cấu trúc điều khiển)
+            4.a lựa chọn rẽ nhánh:
+            * cấu trúc if: 4 dạng if
+            +if đơn 
+            -syntax:
+                    if (condition){
+                        statement block
+                    }
+            +if đầy đủ
+            -syntax:
+                    if(condition){
+                        statement block 1 (conditiontrue)
+                    }else{
+                        statement block 2 (conditionfalse)
+                    }
+            +if bậc thang:
+            -syntax:
+                    if(condition 1){
+                        statement 1;
+                    }else if(condition 2){
+                        statement2;
+                    }.....
+                    }else{
+                        statement n+1}
+                    }
+                }
+            +if lồng nhau:
+            -syntax:
+                    if(condition){
+                        statement 1:
+                        if(condition1){
+                            ....
+                        }
+                    }else{
+                        statement2;
+                        if(condition 2){
+                            statement3;
+                        }else{
+                            statement4;
+                        }
+                        statement5;
+                    }
+
+            * switch..case
+                4.b cấu trúc lặp (loop)
+                    *cấu trúc lặp for:4 dạng khác nhau
+                    -for đầy đủ
+
+                    -for khuyết
+
+                    -for khuyết toàn bộ
+
+                    -for không thân
+                    
+                    *câu lệnh while
+
+                    *do while
+
+                    *for each
+
+                    4.c lệnh nhảy 
+                    break;
+                    continue;
+                    return;
+
+        5.mảng
+=====================================================================================

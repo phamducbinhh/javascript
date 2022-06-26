@@ -1,0 +1,46 @@
+== Kiểm tra giá trị của hai toán hạng nếu       A==B
+đúng trả về true
+
+!= Kiểm tra không bằng nhau của 2 toán          A!=B
+hạng
+
+
+> Kiểm tra toán hạng vế trái có lớn hơn          A>B 
+toán hạng vế phải
+
+                                                                 
+< Kiểm tra toán hạng vế trái nhỏ hơn                A>B
+toán hạng vế phải
+
+                                                
+>= Kiểm tra toán hạng vế trái lớn hơn               A>=B
+hoặc bằng vế phải
+
+                                                
+
+<= Kiểm tra toán hạng vế trái nhỏ hơn                   A<=B
+hoặc bằng vế phải
+
+                                                
+=== Kiểm tra 2 toán hạng bằng kiểu giá trị                 A===B
+và kiểu giữ liệu
+
+
+Toán tử Mô tả Ví dụ
+&& (AND) Cả hai toán hạng là true thì kết
+quả trả về là true
+
+                                                                A&&B
+|| (OR) Một trong 2 toán hạng là true kết
+
+quả trả là true
+
+                                                                A||B
+
+! (NOT) Đảo ngược trạng thái của toán
+
+hạng
+
+                                                                !A
+
+                                              

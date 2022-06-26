@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <h2>Thay đổi nội dung của thẻ HTML</h2>
+    <p id="content">
+        đây là nội dung cần thay đổi
+    </p>
+    <input type="button" id="btn1" value="Nội dung 1">
+    <input type="button" id="btn2" value="Nội dung 2">
+
+
+    <script>
+        // Lấy 2 button và thẻ div
+        let button1 = document.getElementById("btn1");
+        let button2 = document.getElementById("btn2");
+        let p = document.getElementById('content');
+
+        // Thiết lập click cho button
+        button1.onclick = function () {
+            p.innerHTML = "Phạm Đức Bình";
+        }
+        button2.onclick = function () {
+            p.innerHTML = "Nguyễn Mai Chi"
+        }
+    </script>
+</body>
+
+</html>

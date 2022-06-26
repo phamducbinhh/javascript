@@ -1,0 +1,46 @@
+array
+
+-array[ số thứ tự muốn xem]
+
+-array[số tt ] = giá trị mới
+
+ví dụ:
+    var x = [1,3,5,7,9]
+    //lấy giá trị trong array
+    x[0];
+    // ghi đè giá trị vào array
+    x[0]=10;
+    // thêm giá trị vào array
+    x[4]=12;
+    //log
+
+-thêm mới array
+array[số tt chưa có] = gái trị mới
+
+-cách tính tổng:khái báo var tong = 0;
+ ////   tong = tong + i//////
+
+
+    *ví dụ://tính tổng của các phần tử trong arr
+      var arr = [9,8,3,4,6];
+      var tong=0;
+      for(i=0;i<arr.length;i++){
+        tong+=arr[i]
+      }
+      console.log(tong);
+
+
+-cách tính tích:khái báo var tích = 1;
+ ////   tích = tích * i//////
+    
+    *ví dụ :   //tích số lẻ từ đến 10
+      var tich = 1;
+      for(i=0;i<=10;i++){
+        if(i % 2 == 0){
+            console.log('so chan', i);
+        }else{
+            console.log('so le',i);
+            tich=tich*i
+        }
+      }
+      console.log('tich cua so le la:'+tich);
